@@ -1,0 +1,20 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+:root {
+  --white: rgb(245, 245, 245);
+  --black-opacity: rgba(5, 5, 5, 0.75);
+  --black: rgb(5, 5, 5);
+  --primary-light: rgb(128, 206, 112);
+  --primary-light-glass: rgba(128, 206, 112, 0.5);
+  --primary: rgb(68, 136, 66);
+  --primary-dark: rgb(32, 32, 32);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}

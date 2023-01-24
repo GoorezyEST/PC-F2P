@@ -1,0 +1,244 @@
+.all_data {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80vh;
+  justify-content: center;
+}
+
+.hide {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.games {
+  width: 100%;
+  height: 460px;
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.games_card {
+  width: 100%;
+  height: 200px;
+  border-radius: 0.5rem;
+  cursor: default;
+  user-select: none;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+.games_card_content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.games_card_content:hover > .games_card_data {
+  transform: translateY(0);
+}
+
+.games_card_img {
+  width: 100%;
+  height: 100%;
+}
+
+.games_card_data {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--black-opacity);
+  transform: translateY(100%);
+  transition: all 0.3s;
+  z-index: 1;
+}
+
+.games_card_data h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.games_card_data p {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.games_card_data p span {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary-light);
+}
+
+.games_card_data a {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  border-radius: 0.5rem;
+  padding: 0.45rem 1.75rem 0.5rem 1.75rem;
+  background-color: var(--primary);
+  text-align: center;
+}
+
+.games_card_data a:hover {
+  color: var(--primary);
+  background-color: var(--white);
+}
+
+.games_pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.games_pagination p {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--white);
+}
+
+.games_pagination button {
+  border: none;
+  outline: none;
+  height: max-content;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s;
+  cursor: pointer;
+  background-color: var(--primary-dark);
+}
+
+.games_pagination button:hover {
+  transform: scale(1.025);
+}
+
+.games_pagination button:active {
+  transform: scale(0.95);
+}
+
+.games_pagination button:disabled .games_pagination_icon {
+  opacity: 0.5;
+}
+
+.games_pagination_icon {
+  font-size: 1.65rem;
+  fill: var(--primary);
+}
+
+.jump {
+  font-size: 1.25rem;
+}
+
+.loading_p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+@media screen and (max-width: 900px) {
+  .all_data {
+    justify-content: space-evenly;
+  }
+
+  .games {
+    height: 90%;
+    padding: 1.5rem 1.5rem 0 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    overflow-y: scroll;
+  }
+
+  .games::-webkit-scrollbar {
+    display: none;
+  }
+
+  .games_card {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .games {
+    height: 90%;
+    padding: 1rem 1.5rem 0 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    overflow-y: scroll;
+    justify-items: center;
+  }
+
+  .games_card {
+    height: 150px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .games_pagination_icon {
+    font-size: 1rem;
+  }
+
+  .games {
+    padding: 0.5rem 1rem 0 1rem;
+    gap: 1rem;
+  }
+
+  .jump {
+    font-size: 0.75rem;
+  }
+
+  .games_pagination p {
+    font-weight: 500;
+    font-size: 0.75rem;
+  }
+
+  .games_card_data h3 {
+    font-size: 1rem;
+  }
+
+  .games_card_data p {
+    font-size: 0.75rem;
+  }
+
+  .games_card_data p span {
+    font-size: 0.75rem;
+  }
+
+  .games_card_data a {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  .games {
+    padding: 0.75rem 1rem 0 1rem;
+  }
+  .games {
+    gap: 0.75rem;
+  }
+}
