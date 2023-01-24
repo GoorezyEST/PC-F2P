@@ -5,6 +5,7 @@ import { useSettings } from "./services/ContextProvider";
 import Home from "./components/home/Home";
 import FreeGames from "./components/free-games/FreeGames";
 import About from "./components/about/About";
+import Error from "./components/error/Error";
 
 function App() {
   const { setGames } = useSettings();
@@ -20,6 +21,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="*" element={<Error />} />
         <Route exact path="/" element={<Home />} />
         <Route path="/games" element={<FreeGames />} />
         <Route path="/about" element={<About />} />

@@ -1,0 +1,39 @@
+.error_section {
+  background-color: var(--primary-dark);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.error_section h4 {
+  font-size: 2rem;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.error_section p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-top: 1.5rem;
+}
+
+.error_link {
+  margin-top: 1.5rem;
+  font-size: 1.25;
+  font-weight: 700;
+  background-color: var(--primary);
+  padding: 0.5rem 1rem;
+  color: var(--white);
+  text-decoration: none;
+  border: 2px solid var(--white);
+  border-radius: 1.75rem;
+  box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
+}
+
+.error_link:hover {
+  transform: scale(1.05);
+}
