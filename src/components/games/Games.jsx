@@ -13,6 +13,7 @@ function Games() {
   const [paginatedData, setPaginatedData] = useState([]);
   const [counter, setCounter] = useState(0);
   const gridGamesRef = useRef(null);
+  const [itemsPerPage, setItemsPerPage] = useState(8);
 
   const handleImageLoad = () => {
     setCounter((prevCounter) => {
@@ -20,7 +21,19 @@ function Games() {
     });
   };
 
-  const itemsPerPage = 8;
+  useEffect(() => {
+    if (
+      window.matchMedia("(min-width: 1920px) and (min-height: 1080px)").matches
+    ) {
+      setItemsPerPage(15);
+    } else if (
+      window.matchMedia("(min-width: 1440px) and (min-height: 900px)").matches
+    ) {
+      setItemsPerPage(12);
+    } else {
+      return;
+    }
+  }, []);
 
   useEffect(() => {
     if (Array.isArray(games)) {
